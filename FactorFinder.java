@@ -2,6 +2,7 @@ import java.util.*;
 
 /*
  * Tony Vu
+ * 15/12/2018
  * Prints all of the factors of a given decimal number
  */
 public class FactorFinder {
