@@ -3,7 +3,7 @@ import java.util.*;
 /*
  * Tony Vu
  * Created: 16/12/2018
- * Converts a given decimal number to the binary number
+ * Converts a given positive integer to its binary number
  * Does not do negative or decimal numbers
  */
 public class BinaryConverter {
