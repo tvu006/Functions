@@ -3,7 +3,7 @@ import java.util.*;
 /*
  * Tony Vu\
  * Created: 16/12/2018
- * Converts a given positive integer to the hexadecimal number
+ * Converts a given positive integer to its hexadecimal number
  * Does not do negative or decimal numbers
  */
 public class HexConverter extends BinaryConverter {
@@ -22,7 +22,7 @@ public class HexConverter extends BinaryConverter {
 		String result = "";
 		
 		for (int i = 10; i >= 0; i--) {
-			if (n > Math.pow(16, i)) {
+			if (n >= Math.pow(16, i)) {
 				int x = n / (int) Math.pow(16, i);
 				n = n - (int) (x * Math.pow(16, i));
 				switch (x) {
