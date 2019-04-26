@@ -3,7 +3,8 @@ import java.util.*;
 /*
  * Tony Vu
  * 15/12/2018
- * Prints all possible combinations of the characters in a string
+ * Prints all possible permutations of the characters in a string
+ * Cannot print strings with repeating characters
  */
 
 public class CharacterCombos {
@@ -23,9 +24,12 @@ public class CharacterCombos {
 		for (int i = 0; i < word.length(); i++) {
 			add(word, solutions);
 		}
+		int count = 0;
 		for (String x: solutions) {
+			count++;
 			System.out.println(x);
 		}
+		System.out.println("Number of permutations: " + count);
 	}
 	private static String[] add(String word, String[] array) {
 		int counter = 0;
