@@ -2,8 +2,8 @@ import java.util.*;
 
 /*
  * Tony Vu
- * 22/04/2019
- * Prints calculates all possible permutations of the characters
+ * 13/05/2019
+ * Prints all possible permutations of a string, even with repeating characters
  */
 
 public class CharacterCombos2 {
