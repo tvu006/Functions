@@ -14,52 +14,26 @@ public class CharacterCombos2 {
 		System.out.println("Enter a string: ");
 		word = input.next();
 		
-		System.out.println("Number of permutations: " + calcPerm(word));
+		System.out.println("Permutations: ");
+		TreeSet<String> solutions = solutions("", word);
+		for (String x: solutions) {
+			System.out.println(x);
+		}
+		System.out.println("Number of permutations: " + solutions.size());
 	}
-
-	private static int calcPerm(String word) {
-		String characters = "";
-		
-		for (int i = 0; i < word.length(); i++) {
-			boolean contains = false;
-			for (int j = 0; j < characters.length(); j++) {
-				if (characters.charAt(j) == word.charAt(i)) {
-					contains = true;
-					break;
+	
+	private static TreeSet<String> solutions(String word, String remaining) {
+		TreeSet<String> solutions = new TreeSet<String>();
+		for (int i = 0; i < remaining.length(); i++) {
+			if (remaining.length() > 1) {
+				TreeSet<String> array = solutions(word + remaining.charAt(i), remaining.substring(0, i) + remaining.substring(i + 1));
+				for (String x: array) {
+					solutions.add(x);
 				}
-			}
-			if (!contains) {
-				characters += word.charAt(i);
-			}
-		}
-		
-		int[] occurances = new int[characters.length()];
-		for (int i = 0; i < word.length(); i++) {
-			for (int j = 0; j <= i; j++) {
-				if (characters.charAt(j) == word.charAt(i)) {
-					occurances[j]++;
-					break;
-				}
+			} else {
+				solutions.add(word += remaining.charAt(0));
 			}
 		}
-		int divide = 1;
-		for (int num: occurances) {
-			divide *= factorial(num);
-		}
-		return factorial(word.length()) / divide;
+		return solutions;
 	}
-	
-	private static int factorial(int n) {
-		if (n <= 0) {
-			return 0;
-		} else {
-			int result = 1;
-			for (int i = 1; i <= n; i++) {
-				result *= i;
-			}
-			return result;
-		}
-	}
-	
-	
 }
