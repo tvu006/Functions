@@ -1,0 +1,61 @@
+import java.util.*;
+
+/*
+ * Tony Vu
+ * 25/05/2019
+ * Reverses a string
+ */
+
+public class ReverseString {
+	public static void main(String args[]) {
+		Scanner input = new Scanner(System.in);
+		String line = "";
+		long start, end, time;
+		
+		System.out.println("Enter a string: ");
+		line = input.nextLine();
+
+		start = System.nanoTime();
+		System.out.println(loop(line));
+		end = System.nanoTime();
+		System.out.println("Time: " + (end - start));
+		
+		start = System.nanoTime();
+		System.out.println(recursion("", line));
+		end = System.nanoTime();
+		System.out.println("Time: " + (end - start));
+		
+		start = System.nanoTime();
+		System.out.println(swap(line));
+		end = System.nanoTime();
+		System.out.println("Time: " + (end - start));
+	}
+	
+	private static String loop(String line) {
+		String result = "";
+		for (int i = line.length() - 1; i >= 0; i--) {
+			result += line.charAt(i) + "";
+		}
+		return result;
+	}
+	
+	private static String recursion(String result, String line) {
+		if (line.length() <= 0) {
+			return result;
+		} else {
+			return recursion(result + line.charAt(line.length() - 1), line.substring(0, line.length() - 1));
+		}
+	}
+	
+	private static String swap(String line) {
+		String result = line;
+		for (int i = 0; i < (result.length() / 2); i++) {
+			result = result.substring(0, i)
+					+ result.charAt(result.length() - i - 1)
+					+ result.substring(i + 1, result.length() - i - 1)
+					+ result.charAt(i)
+					+ result.substring(result.length() - i, result.length());
+		}
+		return result;
+	}
+}
