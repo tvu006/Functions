@@ -12,7 +12,7 @@ public class CharacterCombos2 {
 		String word = "";
 		
 		System.out.println("Enter a string: ");
-		word = input.next();
+		word = input.nextLine();
 		
 		System.out.println("Permutations: ");
 		TreeSet<String> solutions = solutions("", word);
