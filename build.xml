@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Functions">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse/java-oxygen3/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="Functions.classpath">
+        <pathelement location="bin"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="Functions.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="BinaryConverter">
+        <java classname="BinaryConverter" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="CharacterCombos">
+        <java classname="CharacterCombos" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="CharacterCombos2">
+        <java classname="CharacterCombos2" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="Counter">
+        <java classname="Counter" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="cps420exam18D4c">
+        <java classname="cps420exam18D4c" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="FactorFinder">
+        <java classname="FactorFinder" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="fibonacci">
+        <java classname="fibonacci" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="HexConverter">
+        <java classname="HexConverter" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="ItemCheck">
+        <java classname="ItemCheck" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="MockMeme">
+        <java classname="MockMeme" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="Morph">
+        <java classname="Morph" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="PrimeFinder">
+        <java classname="PrimeFinder" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="Pythagorean">
+        <java classname="Pythagorean" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="ReverseString">
+        <java classname="ReverseString" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+    <target name="XConverter">
+        <java classname="XConverter" failonerror="true" fork="yes">
+            <classpath refid="Functions.classpath"/>
+        </java>
+    </target>
+</project>
